@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<int> countingSort(const vector<int>& arr) {
+    vector<int> frequency(100, 0); 
+    for (int num : arr) {
+        frequency[num]++;
+    }
+    return frequency;
+}
+
+int main() {
+    int n;
+    cin >> n; 
+    vector<int> arr(n);
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i]; 
+    }
+
+    vector<int> result = countingSort(arr);
+
+    for (int freq : result) {
+        cout << freq << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
